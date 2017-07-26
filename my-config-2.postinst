@@ -1,0 +1,30 @@
+#!/bin/sh
+
+set -e
+
+my-config-change-lines /etc/locale.gen "# en_US.UTF-8 UTF-8" "en_US.UTF-8 UTF-8"
+my-config-change-lines /etc/locale.gen "# ru_RU.UTF-8 UTF-8" "ru_RU.UTF-8 UTF-8"
+
+locale-gen
+
+####
+
+update-command-not-found
+
+####
+
+mkdir -p /etc/apt/apt.conf.d
+
+my-config-cat /etc/apt/apt.conf.d/99my-config << EOF
+APT::Install-Recommends "false";
+EOF
+
+####
+
+my-config-add-line /etc/bash.bashrc 'if ! shopt -oq posix; then'
+my-config-add-line /etc/bash.bashrc '  if [ -f /usr/share/bash-completion/bash_completion ]; then'
+my-config-add-line /etc/bash.bashrc '    . /usr/share/bash-completion/bash_completion'
+my-config-add-line /etc/bash.bashrc '  elif [ -f /etc/bash_completion ]; then'
+my-config-add-line /etc/bash.bashrc '    . /etc/bash_completion'
+my-config-add-line /etc/bash.bashrc '  fi'
+my-config-add-line /etc/bash.bashrc 'fi'
