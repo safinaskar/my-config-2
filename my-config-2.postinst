@@ -28,3 +28,8 @@ my-config-add-line /etc/bash.bashrc '  elif [ -f /etc/bash_completion ]; then'
 my-config-add-line /etc/bash.bashrc '    . /etc/bash_completion'
 my-config-add-line /etc/bash.bashrc '  fi'
 my-config-add-line /etc/bash.bashrc 'fi'
+
+####
+
+mkdir -p /etc
+my-config-add-line /etc/tmux.conf 'set-window-option -g alternate-screen off'

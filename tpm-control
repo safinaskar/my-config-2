@@ -1,7 +1,7 @@
 PACKAGE='safinaskar/my-config-2'
 ARCH='all'
 
-DEPENDS='safinaskar/my-config debian:whiptail debian:apt-utils debian:mc debian:less meta:wget debian:locales prog:ping:iputils-ping debian:bash-completion debian:command-not-found debian:apt debian:bash'
+DEPENDS='safinaskar/my-config debian:whiptail debian:apt-utils debian:mc debian:less meta:wget debian:locales prog:ping:iputils-ping debian:bash-completion debian:command-not-found debian:apt debian:bash debian:tmux'
 BUILD_DEPENDS=''
 LIBS=''
 INSTALL='chmod +x my-config-2.postinst && cp my-config-2.postinst "$INFO"'
