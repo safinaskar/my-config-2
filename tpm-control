@@ -1,7 +1,8 @@
 PACKAGE='safinaskar/my-config-2'
 ARCH='all'
 
-DEPENDS='safinaskar/my-config debian:whiptail debian:apt-utils debian:mc debian:less meta:wget debian:locales prog:ping:iputils-ping debian:bash-completion debian:command-not-found debian:apt debian:bash debian:tmux'
+# Кроме safinaskar/my-config указал ещё несколько моих пакетов просто чтобы они стояли всегда
+DEPENDS='safinaskar/my-config debian:whiptail debian:apt-utils debian:mc debian:less meta:wget debian:locales prog:ping:iputils-ping debian:bash-completion debian:command-not-found debian:apt debian:bash debian:tmux safinaskar/daem safinaskar/killer safinaskar/wrde'
 BUILD_DEPENDS=''
 LIBS=''
 INSTALL='chmod +x my-config-2.postinst && cp my-config-2.postinst "$INFO"'
